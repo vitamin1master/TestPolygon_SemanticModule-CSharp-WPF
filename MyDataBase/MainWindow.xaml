@@ -1,0 +1,28 @@
+﻿<Window x:Class="MyDataBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:customUi="clr-namespace:MyDataBase.CustomUI"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        Title="MainWindow" Height="350" Width="850">
+    <Grid>
+        <!--<customUi:DocumentBox Grid.Row="0" x:Name="DocumentBox1"
+                              FlagDocument="{Binding Model.DocumentRTB1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                              TextChanged="DocumentBox1_OnTextChanged"
+                              >
+        </customUi:DocumentBox>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <avalonedit:TextEditor 
+            Grid.Column="0"
+            TextChanged="TextEditor_OnTextChanged"
+            ShowLineNumbers="True"
+            xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+            Name="textEditor"
+            SyntaxHighlighting="C++"
+            FontSize="10pt"
+            /><!--FontFamily="Segoe Print"-->
+        <Canvas Name="Panel" Grid.Column="1"/>
+    </Grid>
+</Window>
